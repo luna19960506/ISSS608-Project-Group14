@@ -1,0 +1,15 @@
+---
+title: "Findings"
+---
+
+::: {.callout-note}
+This page will present our analytical results and insights once the Shiny modules are built.
+:::
+
+## Key Findings
+
+*(To be completed during development.)*
+
+- **Interaction Network** — findings on actors and the breach path.
+- **Temporal Anomaly** — findings on normal vs crisis-day behaviour.
+- **Internal-State** — findings on leading indicators in the agents' private reasoning.

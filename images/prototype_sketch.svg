@@ -1,0 +1,151 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" font-family="'Comic Sans MS','Bradley Hand','Segoe Print',cursive">
+  <defs>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+    </marker>
+    <marker id="arrowR" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6" fill="none" stroke="#c0392b" stroke-width="1.4"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="700" fill="#fdfdfa"/>
+
+  <!-- ===== all sketch strokes get the rough filter ===== -->
+  <g filter="url(#rough)" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- browser window frame -->
+    <rect x="14" y="14" width="972" height="672" rx="14"/>
+    <line x1="14" y1="56" x2="986" y2="56"/>
+    <circle cx="36" cy="35" r="5"/>
+    <circle cx="54" cy="35" r="5"/>
+    <circle cx="72" cy="35" r="5"/>
+
+    <!-- sidebar -->
+    <rect x="28" y="72" width="232" height="600" rx="8"/>
+
+    <!-- time range -->
+    <rect x="42" y="112" width="204" height="58" rx="6"/>
+    <line x1="58" y1="150" x2="230" y2="150"/>
+    <circle cx="92" cy="150" r="6" fill="#fdfdfa"/>
+    <circle cx="206" cy="150" r="6" fill="#fdfdfa"/>
+
+    <!-- agents -->
+    <rect x="42" y="190" width="204" height="120" rx="6"/>
+    <rect x="56" y="222" width="14" height="14" rx="2"/>
+    <path d="M58,229 l4,4 l6,-8"/>
+    <rect x="56" y="246" width="14" height="14" rx="2"/>
+    <path d="M58,253 l4,4 l6,-8"/>
+    <rect x="56" y="270" width="14" height="14" rx="2"/>
+    <rect x="56" y="289" width="14" height="11" rx="2"/>
+
+    <!-- channels -->
+    <rect x="42" y="330" width="204" height="96" rx="6"/>
+    <rect x="56" y="360" width="14" height="14" rx="2"/>
+    <path d="M58,367 l4,4 l6,-8"/>
+    <rect x="56" y="384" width="14" height="14" rx="2"/>
+    <rect x="56" y="404" width="14" height="14" rx="2"/>
+
+    <!-- public-only toggle -->
+    <rect x="42" y="446" width="204" height="44" rx="22"/>
+    <circle cx="218" cy="468" r="14" fill="#fdfdfa"/>
+
+    <!-- availability toggle -->
+    <rect x="42" y="504" width="204" height="44" rx="22"/>
+    <circle cx="218" cy="526" r="14" fill="#fdfdfa"/>
+
+    <!-- tabs -->
+    <rect x="284" y="78" width="186" height="34" rx="6"/>
+    <rect x="478" y="78" width="170" height="34" rx="6"/>
+    <rect x="656" y="78" width="160" height="34" rx="6"/>
+
+    <!-- main panel (network canvas) -->
+    <rect x="284" y="126" width="532" height="402" rx="8"/>
+
+    <!-- network nodes -->
+    <circle cx="430" cy="250" r="30"/>        <!-- Legal (big) -->
+    <circle cx="560" cy="200" r="20"/>        <!-- Social-Mgr -->
+    <circle cx="640" cy="320" r="18"/>        <!-- PR -->
+    <circle cx="500" cy="370" r="16"/>        <!-- PR-Intern -->
+    <circle cx="380" cy="380" r="14"/>        <!-- Intern -->
+    <ellipse cx="700" cy="430" rx="22" ry="16"/> <!-- Judge (peripheral, different shape) -->
+
+    <!-- network edges -->
+    <line x1="455" y1="235" x2="543" y2="210" marker-end="url(#arrow)"/>
+    <line x1="455" y1="262" x2="625" y2="312" marker-end="url(#arrow)"/>
+    <line x1="445" y1="276" x2="492" y2="356" marker-end="url(#arrow)"/>
+    <line x1="406" y1="262" x2="388" y2="368" marker-end="url(#arrow)"/>
+    <line x1="572" y1="216" x2="628" y2="306" marker-end="url(#arrow)"/>
+
+    <!-- temporal mini-chart at bottom -->
+    <rect x="284" y="540" width="532" height="118" rx="8"/>
+    <line x1="306" y1="636" x2="800" y2="636"/>
+    <line x1="306" y1="636" x2="306" y2="560"/>
+    <polyline points="306,620 360,612 414,616 468,600 522,606 576,560 630,584 684,566 740,574 794,560"/>
+    <line x1="576" y1="558" x2="576" y2="640" stroke="#c0392b"/>
+
+    <!-- side detail panel (network click) -->
+    <rect x="832" y="126" width="140" height="402" rx="8"/>
+    <line x1="848" y1="170" x2="956" y2="170"/>
+    <line x1="848" y1="196" x2="956" y2="196"/>
+    <line x1="848" y1="222" x2="956" y2="222"/>
+    <line x1="848" y1="248" x2="930" y2="248"/>
+    <rect x="848" y="300" width="108" height="210" rx="4"/>
+  </g>
+
+  <!-- ===== anonymous-post highlighted edge (red) ===== -->
+  <g filter="url(#rough)" fill="none" stroke="#c0392b" stroke-width="2.6" stroke-linecap="round">
+    <line x1="452" y1="244" x2="680" y2="424" marker-end="url(#arrowR)"/>
+  </g>
+
+  <!-- ===== text labels (kept crisp, no filter) ===== -->
+  <g fill="#1a1a1a">
+    <text x="92" y="44" font-size="15">Inside the Glass Office — MC1 Investigation</text>
+
+    <text x="60" y="100" font-size="15" font-weight="bold">SHARED FILTERS</text>
+    <text x="56" y="132" font-size="13">Time range (day → hour)</text>
+    <text x="70" y="167" font-size="11">May 17 ........... Jun 5</text>
+
+    <text x="56" y="212" font-size="13">Agents</text>
+    <text x="78" y="234" font-size="12">Legal</text>
+    <text x="78" y="258" font-size="12">Social-Mgr</text>
+    <text x="78" y="282" font-size="12">Judge</text>
+    <text x="78" y="300" font-size="12">… (7 total)</text>
+
+    <text x="56" y="352" font-size="13">Channels</text>
+    <text x="78" y="372" font-size="12">internal</text>
+    <text x="78" y="396" font-size="12">public</text>
+    <text x="78" y="416" font-size="12">anonymous</text>
+
+    <text x="56" y="473" font-size="12">Public posts only</text>
+    <text x="56" y="531" font-size="12">Availability overlay</text>
+
+    <text x="300" y="100" font-size="13" font-weight="bold">Interaction Network</text>
+    <text x="500" y="100" font-size="13">Temporal Anomaly</text>
+    <text x="672" y="100" font-size="13">Internal-State</text>
+
+    <text x="412" y="254" font-size="12" fill="#fdfdfa" font-weight="bold">Legal</text>
+    <text x="540" y="204" font-size="10">Social</text>
+    <text x="624" y="324" font-size="10">PR</text>
+    <text x="478" y="374" font-size="9">PR-Int</text>
+    <text x="364" y="384" font-size="9">Intern</text>
+    <text x="682" y="434" font-size="10">Judge</text>
+
+    <text x="560" y="345" font-size="12" fill="#c0392b" font-weight="bold">anonymous post!</text>
+    <text x="690" y="470" font-size="9" fill="#1a1a1a">(peripheral)</text>
+
+    <text x="300" y="560" font-size="11">Temporal view: public-posts / hour  ·  red = 6PM embargo</text>
+
+    <text x="848" y="158" font-size="11" font-weight="bold">Click a node →</text>
+    <text x="852" y="186" font-size="10">that agent's</text>
+    <text x="852" y="212" font-size="10">messages +</text>
+    <text x="852" y="238" font-size="10">internal state</text>
+    <text x="852" y="292" font-size="10" font-weight="bold">Centrality table</text>
+  </g>
+
+  <!-- caption -->
+  <text x="500" y="684" font-size="12" fill="#555" text-anchor="middle" font-style="italic">Prototype sketch — shared filters drive three linked investigation tabs</text>
+</svg>

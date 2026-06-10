@@ -1,0 +1,27 @@
+---
+title: "User Guide"
+---
+
+::: {.callout-note}
+A step-by-step guide to the Shiny application will be added here as the app is developed.
+:::
+
+## Getting Started
+
+*(To be completed — how to open the app, the shared sidebar filters, and each module.)*
+
+## The Shared Sidebar
+
+*(To be completed.)*
+
+## Module 1 — Interaction Network
+
+*(To be completed.)*
+
+## Module 2 — Temporal Anomaly
+
+*(To be completed.)*
+
+## Module 3 — Internal-State Explorer
+
+*(To be completed.)*

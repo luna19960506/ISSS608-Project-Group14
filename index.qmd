@@ -1,0 +1,26 @@
+---
+title: "Inside the Glass Office"
+subtitle: "Visual Forensics of a Multi-Agent Communications Breach"
+---
+
+## ISSS608 Visual Analytics Project — Group 14
+
+Welcome to the project website for our VAST Challenge 2026 **Mini-Challenge 1** submission. Our team is building an interactive **Shiny** application that turns a two-week log of seven AI communications agents into a forensic investigation tool — so that an analyst can reconstruct how an information embargo was broken, and judge *whether the leak was deliberate or the system broke down under pressure.*
+
+### The Challenge
+
+At the property-technology firm **TenantThread**, a team of AI agents managed corporate communications during a sensitive merger under a strict embargo. The embargo broke: confidential merger details appeared publicly before the agreed release time. Our application helps an analyst answer three questions — *who and what led to the release, how it differed from normal behaviour, and whether there were warning signs.*
+
+### Explore this site
+
+- [**Proposal**](Proposal.qmd) — motivation, objectives, data, methodology, prototype, and schedule.
+- [**Methodology**](methodology.qmd) — how we prepared the data and built the analysis.
+- [**Findings**](findings.qmd) — analytical results and insights.
+- [**Poster**](poster.qmd) — the project poster.
+- [**User Guide**](user-guide.qmd) — how to use the Shiny application.
+- [**Meeting Minutes**](Meeting-Minutes.qmd) — our project meeting records.
+- [**The Team**](team.qmd) — who we are and who did what.
+
+### The Team
+
+Group 14 — **Yang Yang**, **Cheng Yuanyuan**, and **Li Xinyue**.

@@ -1,0 +1,8 @@
+agent_id,agent_label,role,seniority,is_oversight
+legal_agent,Legal-Agent,legal,Senior,TRUE
+quality_agent,Platform-Trust-Agent,platform_trust,Senior,TRUE
+social_media_agent,Social-Manager-Agent,social_manager,Senior,FALSE
+pr_agent,PR-Agent,pr,Senior,FALSE
+intern_agent,Intern-Agent,intern,Junior,FALSE
+pr_intern_agent,PR-Intern-Agent,pr_intern,Junior,FALSE
+judge_agent,Judge-Agent,judge,Compliance,TRUE

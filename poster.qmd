@@ -1,0 +1,9 @@
+---
+title: "Poster"
+---
+
+::: {.callout-note}
+The A1 project poster will be embedded here before the poster submission deadline (1 July 2026).
+:::
+
+*(Insert poster image or PDF embed here once ready.)*

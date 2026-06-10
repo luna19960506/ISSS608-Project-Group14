@@ -1,0 +1,15 @@
+---
+title: "The Team"
+---
+
+## Group 14
+
+We are a team of three from ISSS608 Visual Analytics and Applications.
+
+| Member | Role in the project |
+|---|---|
+| **Li Xinyue** | Data preparation and the Interaction Network module; project website and version control. |
+| **Cheng Yuanyuan** | Temporal Anomaly module. |
+| **Yang Yang** | Internal-State Explorer module and documentation. |
+
+All members jointly review the final Shiny integration, the project website, the poster, and the presentation narrative.

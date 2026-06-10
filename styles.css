@@ -1,0 +1,16 @@
+/* Project site custom styles — tweak freely */
+
+.navbar-title {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Slightly roomier body text */
+body {
+  line-height: 1.6;
+}
+
+/* Tables a touch cleaner */
+table {
+  font-size: 0.95rem;
+}

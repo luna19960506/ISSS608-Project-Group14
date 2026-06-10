@@ -1,0 +1,219 @@
+[
+  {
+    "objectID": "findings.html",
+    "href": "findings.html",
+    "title": "Findings",
+    "section": "",
+    "text": "Note\n\n\n\nThis page will present our analytical results and insights once the Shiny modules are built."
+  },
+  {
+    "objectID": "findings.html#key-findings",
+    "href": "findings.html#key-findings",
+    "title": "Findings",
+    "section": "Key Findings",
+    "text": "Key Findings\n(To be completed during development.)\n\nInteraction Network — findings on actors and the breach path.\nTemporal Anomaly — findings on normal vs crisis-day behaviour.\nInternal-State — findings on leading indicators in the agents’ private reasoning."
+  },
+  {
+    "objectID": "Proposal.html",
+    "href": "Proposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "Organisations are increasingly delegating real-time communications to teams of autonomous AI agents. When such a system works, it is fast and tireless; when it fails, the failure is opaque — decisions are spread across many agents, many channels, and private internal reasoning that no human ever reads. The VAST Challenge 2026 Mini-Challenge 1 dramatises exactly this risk: at the property-technology firm TenantThread, a team of seven AI agents managed corporate communications during a sensitive merger under a strict information embargo, and the embargo broke — confidential merger details appeared publicly before the agreed release time.\nThe motivation for this project is that the analysts investigating the breach face a problem static reports cannot solve: they need to interrogate the agents’ behaviour interactively — to move between the whole two-week timeline and a single decisive hour, to compare an agent’s public output against its private reasoning, and to trace who responded to whom. Our project builds a web-enabled visual analytics application in Shiny that turns the raw multi-agent log into an investigative tool, so that an analyst — not just the authors — can reconstruct what happened and judge whether the leak was deliberate or the system simply broke down under pressure."
+  },
+  {
+    "objectID": "Proposal.html#motivation",
+    "href": "Proposal.html#motivation",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "Organisations are increasingly delegating real-time communications to teams of autonomous AI agents. When such a system works, it is fast and tireless; when it fails, the failure is opaque — decisions are spread across many agents, many channels, and private internal reasoning that no human ever reads. The VAST Challenge 2026 Mini-Challenge 1 dramatises exactly this risk: at the property-technology firm TenantThread, a team of seven AI agents managed corporate communications during a sensitive merger under a strict information embargo, and the embargo broke — confidential merger details appeared publicly before the agreed release time.\nThe motivation for this project is that the analysts investigating the breach face a problem static reports cannot solve: they need to interrogate the agents’ behaviour interactively — to move between the whole two-week timeline and a single decisive hour, to compare an agent’s public output against its private reasoning, and to trace who responded to whom. Our project builds a web-enabled visual analytics application in Shiny that turns the raw multi-agent log into an investigative tool, so that an analyst — not just the authors — can reconstruct what happened and judge whether the leak was deliberate or the system simply broke down under pressure."
+  },
+  {
+    "objectID": "Proposal.html#objectives",
+    "href": "Proposal.html#objectives",
+    "title": "Project Proposal",
+    "section": "Objectives",
+    "text": "Objectives\nThis project aims to build an interactive Shiny application that lets an analyst answer the three core questions of Mini-Challenge 1:\n\nSequence and actors — reconstruct who communicated with whom, and identify the key actors, decision points, and channels that allowed embargoed content to reach the public.\nTypical vs anomalous behaviour — establish what the system’s normal operation looks like, so that the behaviour during the breach becomes visually obvious rather than merely asserted.\nLeading indicators — surface early-warning signals in the agents’ private reasoning, and judge whether the breach was foreseeable and why prior deviations went unactioned.\n\nHow each objective maps onto an application module, a visual analytics technique, and the evidence it produces is set out in the Challenge Question Mapping below."
+  },
+  {
+    "objectID": "Proposal.html#data",
+    "href": "Proposal.html#data",
+    "title": "Project Proposal",
+    "section": "Data",
+    "text": "Data\nThe project uses the Mini-Challenge 1 dataset, MC1_final_00.json, a nested log of the two weeks leading up to the breach. It records the messages exchanged by a team of seven AI agents that managed TenantThread’s communications, organised into a series of time rounds. The rounds are daily investigation snapshots between 17 May and 4 June 2046, then switch to one-hour resolution across the crisis day itself (5 June, 09:00–18:00), so the granularity increases precisely around the event of interest.\nEach message records the sending agent, the channel used (from the internal comms_huddle to the public-facing official_post and anonymous_post), the message type, recipients, an optional reply link (responding_to), the message text, and — critically — the agent’s private internal monologue, split into reacting, rationalizing, and deliberating. Each round also carries an environment_context describing the market state, media events, social-media sentiment, critical deadlines, and any agents recorded as unavailable.\nThe seven agents span three seniority levels — four senior operational roles (Legal, Platform-Trust, Social-Manager, PR), two junior roles (Intern, PR-Intern), and one compliance role, the Judge, installed to enforce the embargo. This combination of agent-to-agent messaging, public output, and private reasoning is what makes the dataset suited to a forensic, interactive treatment. The exact volumes and what each implies for the design are set out next."
+  },
+  {
+    "objectID": "Proposal.html#preliminary-data-audit",
+    "href": "Proposal.html#preliminary-data-audit",
+    "title": "Project Proposal",
+    "section": "Preliminary Data Audit",
+    "text": "Preliminary Data Audit\nThe first pass over the raw JSON suggests that the breach was not just a volume problem; it was a coordination and oversight problem. Most messages are internal, but the risky endpoints are narrow and traceable: only 77 public posts appear in the log, including 28 official posts and 12 anonymous posts. This means the application can keep the public-release surface small while still allowing the analyst to inspect the much larger internal deliberation context that produced it.\n\n\n\n\n\n\n\n\nAudit dimension\nObserved structure\nProposal implication\n\n\n\n\nTime rounds\n23 rounds\nUse a dual-resolution timeline: daily context, then hourly crisis drill-down.\n\n\nMessages\n912 messages\nUse linked filtering and searchable tables so evidence remains inspectable.\n\n\nAgents\n7 AI agents\nUse role-based colour and centrality ranking to separate authority from activity.\n\n\nChannels\n6 channels\nDistinguish internal coordination channels from public release channels.\n\n\nPublic posts\n77 messages\nTreat public output as a small, high-risk subset linked back to private reasoning.\n\n\nAnonymous posts\n12 messages\nHighlight anonymity as a special breach-path condition.\n\n\n\nThe audit also shows that agent participation changes over time. Some rounds include all seven agents, while several crisis-hour rounds include only two to five active participants. This makes availability analytically important: the final system should not merely ask who posted, but also who was missing, muted, or peripheral when the post escaped."
+  },
+  {
+    "objectID": "Proposal.html#challenge-question-mapping",
+    "href": "Proposal.html#challenge-question-mapping",
+    "title": "Project Proposal",
+    "section": "Challenge Question Mapping",
+    "text": "Challenge Question Mapping\nTo keep the proposal aligned with the Mini-Challenge, each app module is designed around a specific investigative question and a visible form of evidence.\n\n\n\n\n\n\n\n\n\nMini-Challenge question\nApp module\nVisual analytics response\nEvidence produced\n\n\n\n\nWhat key events and relationships led to the inappropriate release?\nInteraction Network\nReply/recipient network linked to message details and public-post markers.\nBreach path, decision actors, channels used, and oversight gaps.\n\n\nHow did release behaviour compare with prior typical behaviour?\nTemporal Anomaly\nBaseline-vs-crisis timelines, channel heatmaps, and metric drill-down.\nNormal operating profile and visible departures during 5 June.\n\n\nWere there leading indicators that such a release was possible?\nInternal-State Explorer\nSentiment, rationalisation terms, and private monologue filters over time.\nEarlier deviations, missed warning signs, and reasons they may not have triggered action.\n\n\n\nThe design principle is traceability: every visual summary must lead back to the underlying message text, internal state, timestamp, agent, and channel. This prevents the system from becoming a decorative dashboard; it becomes an evidence workspace."
+  },
+  {
+    "objectID": "Proposal.html#methodology",
+    "href": "Proposal.html#methodology",
+    "title": "Project Proposal",
+    "section": "Methodology",
+    "text": "Methodology\n\nDiagramExplanation\n\n\n\n\n\n\n\n%%{init: {'theme':'neutral', 'themeVariables': {'fontSize':'13px'}}}%%\nflowchart TD\n  in[(\"in: MC1_final_00.json\")]\n\n  subgraph prep [Data Preparation]\n    read[Read & parse nested JSON]\n    clean[Flatten to tidy message table]\n    feat[Derive features: channel group,&lt;br/&gt;risk flags, seniority, availability, msg length]\n    read --&gt; clean --&gt; feat\n  end\n\n  subgraph trans [Build Analysis Tables]\n    net[Reply & recipient edge lists]\n    tmp[Per-round profile + environment events]\n    txt[Tokenise internal monologue]\n    feat --&gt; net\n    feat --&gt; tmp\n    feat --&gt; txt\n  end\n\n  subgraph stat [Analysis]\n    cen[Network centrality&lt;br/&gt;degree / betweenness]\n    base[Baseline vs crisis comparison]\n    sent[Sentiment & rationalisation scoring]\n    net --&gt; cen\n    tmp --&gt; base\n    txt --&gt; sent\n  end\n\n  subgraph viz [Interactive Visualisation - Shiny]\n    m1[Module 1: Interaction Network]\n    m2[Module 2: Temporal Anomaly]\n    m3[Module 3: Internal-State]\n    cen --&gt; m1\n    base --&gt; m2\n    sent --&gt; m3\n  end\n\n  in --&gt; read\n  feat -. save .-&gt; rds[(\"clean tables: .rds\")]\n  rds --&gt; net\n  rds --&gt; tmp\n  rds --&gt; txt\n\n\n\n\n\n\n\n\n\nData Preparation — Parse the nested JSON and flatten it into one tidy table where each row is a single message. Derive the analytical features the modules need: whether a channel is internal or public, message length, a risk flag for monologue that references the embargo/merger, each agent’s seniority and oversight role, and whether key agents were unavailable during a round. The clean tables are saved as .rds so the Shiny app loads instantly without re-parsing.\nBuild Analysis Tables — From the master table, construct (a) edge lists (who replied to whom; who sent to whom) for the network module; (b) a per-round profile plus an environment-events table for the temporal module; and (c) a tokenised version of the internal monologue for the text module.\nAnalysis — Compute network centrality to rank actors and locate peripheral oversight; aggregate a baseline of normal behaviour to contrast with the crisis day; score the monologue for sentiment and rationalisation; and flag cases where embargo-related reasoning appears before public release.\nInteractive Visualisation — Expose all of the above through three Shiny modules, driven by shared filters so the analyst can pivot the whole investigation on a time range, a set of agents, or a set of channels."
+  },
+  {
+    "objectID": "Proposal.html#prototype-sketches",
+    "href": "Proposal.html#prototype-sketches",
+    "title": "Project Proposal",
+    "section": "Prototype Sketches",
+    "text": "Prototype Sketches\nOur Shiny app centres on a forensic investigation workflow, with shared filters in a sidebar so every module responds to the same time range, agents, and channels. The analyst drives the investigation; the app does not assert conclusions.\nThe hand-drawn sketch below shows the intended interface layout — a shared filter sidebar on the left and the three investigation tabs on the right.\n\n\n\nHand-drawn prototype of the application interface: shared filter sidebar (left) and the three module tabs (right).\n\n\n\nThe interaction flow below shows how the shared sidebar drives all three tabs, and how the network, temporal, and internal-state views link back to the underlying message and monologue evidence.\n\n\n\n\n\n%%{init: {'theme':'neutral', 'themeVariables': {'fontSize':'13px'}}}%%\nflowchart LR\n  subgraph side [Shared sidebar]\n    time[Time range&lt;br/&gt;daily to hourly]\n    agents[Agent selector]\n    channels[Channel selector]\n    public[Public-only toggle]\n  end\n\n  subgraph m1 [Tab 1: Interaction Network]\n    netviz[Network graph]\n    rank[Centrality table]\n    msg1[Clicked agent messages]\n  end\n\n  subgraph m2 [Tab 2: Temporal Anomaly]\n    line[Baseline vs crisis timeline]\n    heat[Agent x channel heatmap]\n    events[Environment event markers]\n  end\n\n  subgraph m3 [Tab 3: Internal-State Explorer]\n    sentviz[Sentiment and rationalisation trend]\n    terms[Keyword evidence panel]\n    msg2[Linked monologue table]\n  end\n\n  side --&gt; m1\n  side --&gt; m2\n  side --&gt; m3\n  netviz --&gt; msg1\n  line --&gt; msg2\n  sentviz --&gt; msg2\n\n\n\n\n\n\nThe storyboard starts broad and narrows: first identify the breach hour and public channel, then inspect the active agents and reply relationships, then open the private reasoning that preceded the risky post. This mirrors how an analyst would build a defensible explanation rather than jump to a conclusion.\n\nInputsOutputs\n\n\nGlobal filters (sidebar, shared by all modules)\n\nTime range — a date/time slider over 17 May–5 June 2046, able to drill from daily resolution into the hourly crisis day. This is the central control, since the core question is normal vs crisis behaviour.\nAgents — a multi-select of the seven agents, to isolate, for example, just the Legal-Agent and the Judge.\nChannels — a multi-select of the six channels, or an internal/public toggle, to isolate the public-facing output through which a leak must travel.\nAvailability overlay — a switch that marks rounds where key oversight agents were unavailable or absent from the active participant list.\n\nModule 1 — Interaction Network\n\nEdge type — reply relationships vs sender-to-recipient relationships.\nNode encoding — size by message volume; colour by seniority / oversight role.\nHighlight anonymous channel — a switch that flags any edge or node using the unattributed anonymous_post channel.\n\nModule 2 — Temporal Anomaly\n\nMetric — message volume / public-post count / risk-aware share / net sentiment.\nView mode — full two-week timeline vs hourly drill-down on the crisis day.\nOverlay environment events — toggle media events, investigations, and agent-unavailability markers onto the timeline.\n\nModule 3 — Internal-State\n\nMonologue layer — reacting / rationalizing / deliberating.\nKeyword filter — restrict to messages whose private reasoning mentions chosen terms (e.g. embargo, merger).\nSentiment lexicon — choose the scoring dictionary (bing / afinn).\n\n\n\nModule 1 — Interaction Network\n\nInteractive network graph — draggable, hover-for-detail nodes; clicking a node opens that agent’s messages for the selected period. The core output for locating actors and the breach path.\nCentrality / ranking table — which agents are most central and which (the Judge) sit at the periphery.\nBreach-path evidence drawer — selected public or anonymous posts display their upstream replies, recipients, and internal-state excerpts.\n\nModule 2 — Temporal Anomaly\n\nInteractive timeline — zoomable, hover-for-value chart of the chosen metric, with optional event markers.\nBaseline-vs-crisis comparison — side-by-side view that makes the departure from normal behaviour explicit.\nChannel-usage heatmap — agent × time, showing who used which channel when.\n\nModule 3 — Internal-State\n\nSentiment-over-time curve — how the system’s private mood evolved.\nWord-frequency / word-cloud — the recurring language of self-justification in the rationalizing stream.\nLinked message table — selecting a point on the timeline reveals the actual internal monologue at that moment."
+  },
+  {
+    "objectID": "Proposal.html#novelty-and-expected-contribution",
+    "href": "Proposal.html#novelty-and-expected-contribution",
+    "title": "Project Proposal",
+    "section": "Novelty and Expected Contribution",
+    "text": "Novelty and Expected Contribution\nThe novelty of the project is the integration of public output, internal conversation, private agent reasoning, and environment context into one linked visual analytics workflow. A conventional dashboard could count messages or draw a network; our proposed system is designed to support a legal-forensic question: can the evidence distinguish deliberate disclosure from system breakdown?\nThe expected contribution is therefore methodological as well as technical. The application will let users move from aggregate signals to individual evidence, compare baseline and crisis behaviour without losing context, and inspect the private rationalisation stream that is usually invisible in communication audits. This gives the project a sharper value proposition than a generic multi-agent monitoring dashboard."
+  },
+  {
+    "objectID": "Proposal.html#division-of-labour",
+    "href": "Proposal.html#division-of-labour",
+    "title": "Project Proposal",
+    "section": "Division of Labour",
+    "text": "Division of Labour\nThe project is organised as three well-defined sub-modules built on a shared data-preparation layer, matching the course requirement that the system as a whole should be greater than the sum of its parts.\n\n\n\n\n\n\n\n\nTeam member\nPrimary responsibility\nMain deliverables\n\n\n\n\nLi Xinyue\nData preparation and Interaction Network module\nJSON parser, tidy message tables, edge lists, network visualisation, centrality table.\n\n\nCheng Yuanyuan\nTemporal Anomaly module\nBaseline/crisis metrics, timeline, channel heatmap, environment-event overlays.\n\n\nYang Yang\nInternal-State Explorer and documentation\nText tokenisation, sentiment/rationalisation scoring, linked evidence table, user guide.\n\n\n\nAll members will jointly review the final Shiny integration, project website, poster, and presentation narrative so that the analytical story remains coherent across modules."
+  },
+  {
+    "objectID": "Proposal.html#r-packages",
+    "href": "Proposal.html#r-packages",
+    "title": "Project Proposal",
+    "section": "R Packages",
+    "text": "R Packages\nWe expect to use the following R packages, all available on CRAN:\n\nUtilityPlottingShiny App\n\n\n\njsonlite — parse the nested JSON log.\ntidyverse — data import, wrangling, and ggplot2 graphics.\nlubridate — handle the round timestamps.\ntidytext — tokenise and score the internal monologue.\nigraph — compute graph metrics such as degree and betweenness centrality (the numbers behind the network), which visNetwork then renders interactively.\n\n\n\n\nggplot2 — base static graphics.\nplotly — interactive, zoomable timelines.\nggiraph — hover/click tooltips on ggplot charts.\nvisNetwork — render the interactive agent network from the igraph structure.\nDT — searchable message and ranking tables.\npatchwork — compose multi-panel figures.\n\n\n\n\nshiny — the application framework.\nbslib — theming and layout.\nshinyWidgets — richer input controls (pickers, switches)."
+  },
+  {
+    "objectID": "Proposal.html#project-schedule",
+    "href": "Proposal.html#project-schedule",
+    "title": "Project Proposal",
+    "section": "Project Schedule",
+    "text": "Project Schedule\n\n\nCode\nlibrary(ggplot2)\n\ndata &lt;- read.csv(text = \"event,group,start,end,color\nProposal published on Vercel,Milestones,2026-06-10,2026-06-10,#000000\nPoster due on eLearn,Milestones,2026-07-01,2026-07-01,#000000\nPoster presentation,Milestones,2026-07-04,2026-07-04,#000000\nFinal submission,Milestones,2026-07-05,2026-07-05,#000000\nBrainstorm & consult instructor,Development,2026-06-05,2026-06-07,#a5d6a7\nData preparation (shared),Development,2026-06-06,2026-06-10,#a5d6a7\nModule 1 Network,Development,2026-06-11,2026-06-27,#DD4B39\nModule 2 Temporal,Development,2026-06-11,2026-06-27,#DD4B39\nModule 3 Internal-State,Development,2026-06-11,2026-06-27,#DD4B39\nIntegrate & deploy Shiny app,Development,2026-06-24,2026-07-03,#DD4B39\nProject proposal,Deliverables,2026-06-05,2026-06-10,#a5d6a7\nProject website (Quarto/Vercel),Deliverables,2026-06-05,2026-07-05,#a5d6a7\nPoster,Deliverables,2026-06-20,2026-07-01,#DD4B39\nUser guide,Deliverables,2026-06-27,2026-07-05,#DD4B39\nMinutes of Meeting (ongoing),Deliverables,2026-06-07,2026-07-05,#a5d6a7\",\nstringsAsFactors = FALSE)\n\ndata$start &lt;- as.Date(data$start)\ndata$end &lt;- as.Date(data$end)\n# order the y-axis chronologically (earliest task at the top)\nord &lt;- order(data$start, data$end, decreasing = TRUE)\ndata$event &lt;- factor(data$event, levels = data$event[ord])\ndata$is_milestone &lt;- data$start == data$end\n\nggplot(data) +\n  geom_segment(\n    data = subset(data, !is_milestone),\n    aes(x = start, xend = end, y = event, yend = event, colour = group),\n    linewidth = 5,\n    lineend = \"round\"\n  ) +\n  geom_point(\n    data = subset(data, is_milestone),\n    aes(x = start, y = event, colour = group),\n    size = 3.5\n  ) +\n  geom_vline(\n    xintercept = as.Date(\"2026-06-10\"),\n    colour = \"red\",\n    linewidth = 0.8\n  ) +\n  annotate(\n    \"text\",\n    x = as.Date(\"2026-06-10\"),\n    y = nlevels(data$event),\n    label = \"Proposal deadline\\n10 Jun\",\n    colour = \"red\",\n    hjust = -0.05,\n    vjust = 1,\n    size = 3\n  ) +\n  scale_colour_manual(\n    values = c(\n      \"Development\" = \"#a5d6a7\",\n      \"Deliverables\" = \"#DD4B39\",\n      \"Milestones\" = \"#000000\"\n    )\n  ) +\n  labs(\n    title = \"Project Timeline\",\n    x = NULL,\n    y = NULL,\n    colour = NULL\n  ) +\n  theme_minimal(base_size = 11) +\n  theme(\n    panel.grid.major.y = element_blank(),\n    legend.position = \"bottom\"\n  )\n\n\n\n\n\n\n\n\n\nThe four black markers are the official milestones; the red line is the proposal deadline (10 June 2026). Work proceeds in three streams: shared data preparation is completed first as a common foundation; the three modules are then developed in parallel, one per team member, before integration and deployment to shinyapps.io; and the deliverables (website, poster, user guide, and ongoing Minutes of Meeting) run alongside throughout."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Inside the Glass Office",
+    "section": "",
+    "text": "Welcome to the project website for our VAST Challenge 2026 Mini-Challenge 1 submission. Our team is building an interactive Shiny application that turns a two-week log of seven AI communications agents into a forensic investigation tool — so that an analyst can reconstruct how an information embargo was broken, and judge whether the leak was deliberate or the system broke down under pressure.\n\n\nAt the property-technology firm TenantThread, a team of AI agents managed corporate communications during a sensitive merger under a strict embargo. The embargo broke: confidential merger details appeared publicly before the agreed release time. Our application helps an analyst answer three questions — who and what led to the release, how it differed from normal behaviour, and whether there were warning signs.\n\n\n\n\nProposal — motivation, objectives, data, methodology, prototype, and schedule.\nMethodology — how we prepared the data and built the analysis.\nFindings — analytical results and insights.\nPoster — the project poster.\nUser Guide — how to use the Shiny application.\nMeeting Minutes — our project meeting records.\nThe Team — who we are and who did what.\n\n\n\n\nGroup 14 — Yang Yang, Cheng Yuanyuan, and Li Xinyue."
+  },
+  {
+    "objectID": "index.html#isss608-visual-analytics-project-group-14",
+    "href": "index.html#isss608-visual-analytics-project-group-14",
+    "title": "Inside the Glass Office",
+    "section": "",
+    "text": "Welcome to the project website for our VAST Challenge 2026 Mini-Challenge 1 submission. Our team is building an interactive Shiny application that turns a two-week log of seven AI communications agents into a forensic investigation tool — so that an analyst can reconstruct how an information embargo was broken, and judge whether the leak was deliberate or the system broke down under pressure.\n\n\nAt the property-technology firm TenantThread, a team of AI agents managed corporate communications during a sensitive merger under a strict embargo. The embargo broke: confidential merger details appeared publicly before the agreed release time. Our application helps an analyst answer three questions — who and what led to the release, how it differed from normal behaviour, and whether there were warning signs.\n\n\n\n\nProposal — motivation, objectives, data, methodology, prototype, and schedule.\nMethodology — how we prepared the data and built the analysis.\nFindings — analytical results and insights.\nPoster — the project poster.\nUser Guide — how to use the Shiny application.\nMeeting Minutes — our project meeting records.\nThe Team — who we are and who did what.\n\n\n\n\nGroup 14 — Yang Yang, Cheng Yuanyuan, and Li Xinyue."
+  },
+  {
+    "objectID": "Meeting-Minutes.html",
+    "href": "Meeting-Minutes.html",
+    "title": "Meeting Minutes",
+    "section": "",
+    "text": "Date: 07/06/2026\nTime: 3:30 - 4:30 PM\nIn Attendance: Yang Yang, Cheng Yuanyuan, Li Xinyue\n\n\n\nConfirm project topic\nDecide app structure and proposal content\nDivision of labour and action items\n\n\n\n\n\nPrior to the meeting, we had each read through the two Mini-Challenges of VAST Challenge 2026 so that we could compare our preferences.\nYang Yang initially leaned towards MC2, citing the larger event log (around 185,000 events) as good practice for handling scale. Cheng Yuanyuan and Li Xinyue both preferred MC1.\nLi Xinyue pointed out that she had already explored the MC1 data during the take-home exercise and had a working understanding of its nested structure, so the team would have a head start on the data preparation. Cheng Yuanyuan added that MC1’s mix of agent messages and private “internal monologue” suits the text-analysis techniques covered in class.\nAfter discussion we reached consensus to do MC1, on the grounds that (a) we have an existing head start on the data, (b) the 988KB / 912-message dataset is a comfortable size for a responsive Shiny app, and (c) the “detective” framing — deliberate leak vs system breakdown — gives the app a clear narrative for users to investigate.\nYang Yang raised a concern that, since none of us has built a Shiny app before, we should budget time for a learning curve and keep the scope realistic.\n\n\n\n\n\nWe agreed the app should map directly onto the three MC1 questions, with one module (and one owner) per question, so that the whole system is greater than the sum of its parts. The three modules are:\n\nInteraction Network — who communicated with whom; locate the key actors and the breach path.\nTemporal Anomaly — normal operating behaviour vs crisis-day behaviour.\nInternal-State Explorer — sentiment and “rationalising” signals in the agents’ private monologue.\n\nLi Xinyue proposed a shared sidebar of global filters (time range, agents, channels) that every module responds to, so the three views stay synchronised when a user investigates. The team agreed.\nCheng Yuanyuan suggested that selecting a point on the temporal chart should reveal the actual internal monologue at that moment, linking the temporal and text modules. We agreed this cross-module linking would be a strong selling point for interactivity.\nYang Yang proposed an availability overlay — marking rounds where key oversight agents were unavailable or absent from the active participant list — arguing that the system should show not only who posted but who was missing when the post escaped. The team agreed to include this as a distinctive feature.\nWe agreed the proposal would follow the seven sections of the sample proposal (Motivation, Objectives, Data, Methodology, Prototype Sketches, R Packages, Project Schedule), plus a short Preliminary Data Audit and a Challenge Question Mapping to strengthen the framing.\nCheng Yuanyuan raised that we should keep the proposal’s stated scope ambitious but flag that some features may be trimmed during implementation, given our Shiny learning curve. The team agreed.\n\n\n\n\n\nLi Xinyue noted that she had already completed the shared data-preparation work for MC1 — a script that parses the nested JSON and produces the clean tables (master message table, edge lists, per-round profile, environment events, and tokenised monologue) that all three modules will build on. The team agreed to adopt these tables as the common foundation, and that Li Xinyue would maintain them.\nAfter discussing each person’s interests and strengths, we agreed on the division of labour below. Because Li Xinyue had done the data preparation and had already built an agent reply network during the take-home exercise, she took on the data layer and the network module.\n\nLi Xinyue — Data preparation (already completed) and the Interaction Network module: JSON parser, tidy message tables, edge lists, network visualisation, and centrality table. Also maintains the project website (Quarto) and GitHub/Git version control.\nCheng Yuanyuan — Temporal Anomaly module: baseline/crisis metrics, timeline, channel heatmap, and environment-event overlays.\nYang Yang — Internal-State Explorer and documentation: text tokenisation, sentiment/rationalisation scoring, linked evidence table, and the User Guide.\n\nAll members will jointly review the final Shiny integration, project website, poster, and presentation narrative so the analytical story stays coherent across modules.\n\nAction Items\n\nLi Xinyue to share the completed data-preparation script and clean tables with the team, set up the shared GitHub repository, assemble the proposal in Quarto, and publish it to Vercel before the 10 June deadline.\nCheng Yuanyuan to sketch the temporal module’s inputs/outputs and proofread the proposal.\nYang Yang to hand-draw the combined prototype sketch for the Prototype Sketches section and begin scoping the text module.\nAll to sketch the inputs and outputs for their own module, and to confirm the project schedule is realistic against the official milestones."
+  },
+  {
+    "objectID": "Meeting-Minutes.html#project-meeting-1",
+    "href": "Meeting-Minutes.html#project-meeting-1",
+    "title": "Meeting Minutes",
+    "section": "",
+    "text": "Date: 07/06/2026\nTime: 3:30 - 4:30 PM\nIn Attendance: Yang Yang, Cheng Yuanyuan, Li Xinyue\n\n\n\nConfirm project topic\nDecide app structure and proposal content\nDivision of labour and action items\n\n\n\n\n\nPrior to the meeting, we had each read through the two Mini-Challenges of VAST Challenge 2026 so that we could compare our preferences.\nYang Yang initially leaned towards MC2, citing the larger event log (around 185,000 events) as good practice for handling scale. Cheng Yuanyuan and Li Xinyue both preferred MC1.\nLi Xinyue pointed out that she had already explored the MC1 data during the take-home exercise and had a working understanding of its nested structure, so the team would have a head start on the data preparation. Cheng Yuanyuan added that MC1’s mix of agent messages and private “internal monologue” suits the text-analysis techniques covered in class.\nAfter discussion we reached consensus to do MC1, on the grounds that (a) we have an existing head start on the data, (b) the 988KB / 912-message dataset is a comfortable size for a responsive Shiny app, and (c) the “detective” framing — deliberate leak vs system breakdown — gives the app a clear narrative for users to investigate.\nYang Yang raised a concern that, since none of us has built a Shiny app before, we should budget time for a learning curve and keep the scope realistic.\n\n\n\n\n\nWe agreed the app should map directly onto the three MC1 questions, with one module (and one owner) per question, so that the whole system is greater than the sum of its parts. The three modules are:\n\nInteraction Network — who communicated with whom; locate the key actors and the breach path.\nTemporal Anomaly — normal operating behaviour vs crisis-day behaviour.\nInternal-State Explorer — sentiment and “rationalising” signals in the agents’ private monologue.\n\nLi Xinyue proposed a shared sidebar of global filters (time range, agents, channels) that every module responds to, so the three views stay synchronised when a user investigates. The team agreed.\nCheng Yuanyuan suggested that selecting a point on the temporal chart should reveal the actual internal monologue at that moment, linking the temporal and text modules. We agreed this cross-module linking would be a strong selling point for interactivity.\nYang Yang proposed an availability overlay — marking rounds where key oversight agents were unavailable or absent from the active participant list — arguing that the system should show not only who posted but who was missing when the post escaped. The team agreed to include this as a distinctive feature.\nWe agreed the proposal would follow the seven sections of the sample proposal (Motivation, Objectives, Data, Methodology, Prototype Sketches, R Packages, Project Schedule), plus a short Preliminary Data Audit and a Challenge Question Mapping to strengthen the framing.\nCheng Yuanyuan raised that we should keep the proposal’s stated scope ambitious but flag that some features may be trimmed during implementation, given our Shiny learning curve. The team agreed.\n\n\n\n\n\nLi Xinyue noted that she had already completed the shared data-preparation work for MC1 — a script that parses the nested JSON and produces the clean tables (master message table, edge lists, per-round profile, environment events, and tokenised monologue) that all three modules will build on. The team agreed to adopt these tables as the common foundation, and that Li Xinyue would maintain them.\nAfter discussing each person’s interests and strengths, we agreed on the division of labour below. Because Li Xinyue had done the data preparation and had already built an agent reply network during the take-home exercise, she took on the data layer and the network module.\n\nLi Xinyue — Data preparation (already completed) and the Interaction Network module: JSON parser, tidy message tables, edge lists, network visualisation, and centrality table. Also maintains the project website (Quarto) and GitHub/Git version control.\nCheng Yuanyuan — Temporal Anomaly module: baseline/crisis metrics, timeline, channel heatmap, and environment-event overlays.\nYang Yang — Internal-State Explorer and documentation: text tokenisation, sentiment/rationalisation scoring, linked evidence table, and the User Guide.\n\nAll members will jointly review the final Shiny integration, project website, poster, and presentation narrative so the analytical story stays coherent across modules.\n\nAction Items\n\nLi Xinyue to share the completed data-preparation script and clean tables with the team, set up the shared GitHub repository, assemble the proposal in Quarto, and publish it to Vercel before the 10 June deadline.\nCheng Yuanyuan to sketch the temporal module’s inputs/outputs and proofread the proposal.\nYang Yang to hand-draw the combined prototype sketch for the Prototype Sketches section and begin scoping the text module.\nAll to sketch the inputs and outputs for their own module, and to confirm the project schedule is realistic against the official milestones."
+  },
+  {
+    "objectID": "poster.html",
+    "href": "poster.html",
+    "title": "Poster",
+    "section": "",
+    "text": "Note\n\n\n\nThe A1 project poster will be embedded here before the poster submission deadline (1 July 2026).\n\n\n(Insert poster image or PDF embed here once ready.)"
+  },
+  {
+    "objectID": "team.html",
+    "href": "team.html",
+    "title": "The Team",
+    "section": "",
+    "text": "We are a team of three from ISSS608 Visual Analytics and Applications.\n\n\n\n\n\n\n\nMember\nRole in the project\n\n\n\n\nLi Xinyue\nData preparation and the Interaction Network module; project website and version control.\n\n\nCheng Yuanyuan\nTemporal Anomaly module.\n\n\nYang Yang\nInternal-State Explorer module and documentation.\n\n\n\nAll members jointly review the final Shiny integration, the project website, the poster, and the presentation narrative."
+  },
+  {
+    "objectID": "team.html#group-14",
+    "href": "team.html#group-14",
+    "title": "The Team",
+    "section": "",
+    "text": "We are a team of three from ISSS608 Visual Analytics and Applications.\n\n\n\n\n\n\n\nMember\nRole in the project\n\n\n\n\nLi Xinyue\nData preparation and the Interaction Network module; project website and version control.\n\n\nCheng Yuanyuan\nTemporal Anomaly module.\n\n\nYang Yang\nInternal-State Explorer module and documentation.\n\n\n\nAll members jointly review the final Shiny integration, the project website, the poster, and the presentation narrative."
+  },
+  {
+    "objectID": "user-guide.html",
+    "href": "user-guide.html",
+    "title": "User Guide",
+    "section": "",
+    "text": "Note\n\n\n\nA step-by-step guide to the Shiny application will be added here as the app is developed."
+  },
+  {
+    "objectID": "user-guide.html#getting-started",
+    "href": "user-guide.html#getting-started",
+    "title": "User Guide",
+    "section": "Getting Started",
+    "text": "Getting Started\n(To be completed — how to open the app, the shared sidebar filters, and each module.)"
+  },
+  {
+    "objectID": "user-guide.html#the-shared-sidebar",
+    "href": "user-guide.html#the-shared-sidebar",
+    "title": "User Guide",
+    "section": "The Shared Sidebar",
+    "text": "The Shared Sidebar\n(To be completed.)"
+  },
+  {
+    "objectID": "user-guide.html#module-1-interaction-network",
+    "href": "user-guide.html#module-1-interaction-network",
+    "title": "User Guide",
+    "section": "Module 1 — Interaction Network",
+    "text": "Module 1 — Interaction Network\n(To be completed.)"
+  },
+  {
+    "objectID": "user-guide.html#module-2-temporal-anomaly",
+    "href": "user-guide.html#module-2-temporal-anomaly",
+    "title": "User Guide",
+    "section": "Module 2 — Temporal Anomaly",
+    "text": "Module 2 — Temporal Anomaly\n(To be completed.)"
+  },
+  {
+    "objectID": "user-guide.html#module-3-internal-state-explorer",
+    "href": "user-guide.html#module-3-internal-state-explorer",
+    "title": "User Guide",
+    "section": "Module 3 — Internal-State Explorer",
+    "text": "Module 3 — Internal-State Explorer\n(To be completed.)"
+  },
+  {
+    "objectID": "methodology.html",
+    "href": "methodology.html",
+    "title": "Methodology",
+    "section": "",
+    "text": "Note\n\n\n\nThis page will document the full analytical workflow once development is underway. The high-level methodology is described in the Proposal."
+  },
+  {
+    "objectID": "methodology.html#overview",
+    "href": "methodology.html#overview",
+    "title": "Methodology",
+    "section": "Overview",
+    "text": "Overview\n(To be completed during development.)\nOur workflow has four stages: data preparation, building analysis tables, analysis, and interactive visualisation. See the methodology diagram in the Proposal for the overview."
+  },
+  {
+    "objectID": "methodology.html#data-preparation",
+    "href": "methodology.html#data-preparation",
+    "title": "Methodology",
+    "section": "Data Preparation",
+    "text": "Data Preparation\n(To be completed — describe the shared data_prep.R script and the clean tables it produces.)"
+  },
+  {
+    "objectID": "methodology.html#analysis",
+    "href": "methodology.html#analysis",
+    "title": "Methodology",
+    "section": "Analysis",
+    "text": "Analysis\n(To be completed — network centrality, baseline-vs-crisis comparison, sentiment and rationalisation scoring.)"
+  }
+]

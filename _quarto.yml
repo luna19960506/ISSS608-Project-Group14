@@ -1,0 +1,55 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Inside the Glass Office"
+  description: "ISSS608 Group 14 — Visual Forensics of a Multi-Agent Communications Breach (VAST Challenge 2026 MC1)"
+
+  navbar:
+    background: "#2B3A67"      # deep navy; change to taste
+    foreground: "#FFFFFF"
+    search: true
+
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Proposal"
+        href: Proposal.qmd
+      - text: "Methodology"
+        href: methodology.qmd
+      - text: "Findings"
+        href: findings.qmd
+      - text: "Poster"
+        href: poster.qmd
+      - text: "User Guide"
+        href: user-guide.qmd
+      - text: "Meeting Minutes"
+        href: Meeting-Minutes.qmd
+
+    right:
+      - text: "The Team"
+        href: team.qmd
+      - text: "Shiny App"
+        href: "https://your-app-name.shinyapps.io/your-app/"
+        target: _blank
+      - icon: github
+        href: "https://github.com/your-team/your-repo"
+        target: _blank
+        aria-label: GitHub
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+    fig-align: center
+
+execute:
+  warning: false
+  message: false
+  freeze: auto

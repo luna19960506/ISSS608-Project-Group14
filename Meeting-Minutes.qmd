@@ -1,0 +1,67 @@
+---
+title: "Meeting Minutes"
+---
+
+# ISSS608 Group 14 Meeting Minutes
+
+## Project Meeting 1
+
+**Date:** 07/06/2026
+
+**Time:** 3:30 - 4:30 PM
+
+**In Attendance:** Yang Yang, Cheng Yuanyuan, Li Xinyue
+
+### Agenda Items
+
+1. Confirm project topic
+2. Decide app structure and proposal content
+3. Division of labour and action items
+
+### Agenda Item 1: Confirm project topic
+
+- Prior to the meeting, we had each read through the two Mini-Challenges of [VAST Challenge 2026](https://vast-challenge.github.io/2026/) so that we could compare our preferences.
+
+- Yang Yang initially leaned towards MC2, citing the larger event log (around 185,000 events) as good practice for handling scale. Cheng Yuanyuan and Li Xinyue both preferred MC1.
+
+- Li Xinyue pointed out that she had already explored the MC1 data during the take-home exercise and had a working understanding of its nested structure, so the team would have a **head start** on the data preparation. Cheng Yuanyuan added that MC1's mix of agent messages and private "internal monologue" suits the text-analysis techniques covered in class.
+
+- After discussion we reached consensus to do **MC1**, on the grounds that (a) we have an existing head start on the data, (b) the 988KB / 912-message dataset is a comfortable size for a responsive Shiny app, and (c) the "detective" framing — *deliberate leak vs system breakdown* — gives the app a clear narrative for users to investigate.
+
+- Yang Yang raised a concern that, since none of us has built a Shiny app before, we should budget time for a learning curve and keep the scope realistic.
+
+### Agenda Item 2: Decide app structure and proposal content
+
+- We agreed the app should map directly onto the three MC1 questions, with one module (and one owner) per question, so that the whole system is greater than the sum of its parts. The three modules are:
+  1. **Interaction Network** — who communicated with whom; locate the key actors and the breach path.
+  2. **Temporal Anomaly** — normal operating behaviour vs crisis-day behaviour.
+  3. **Internal-State Explorer** — sentiment and "rationalising" signals in the agents' private monologue.
+
+- Li Xinyue proposed a **shared sidebar** of global filters (time range, agents, channels) that every module responds to, so the three views stay synchronised when a user investigates. The team agreed.
+
+- Cheng Yuanyuan suggested that selecting a point on the temporal chart should reveal the actual internal monologue at that moment, linking the temporal and text modules. We agreed this cross-module linking would be a strong selling point for interactivity.
+
+- Yang Yang proposed an **availability overlay** — marking rounds where key oversight agents were unavailable or absent from the active participant list — arguing that the system should show not only who posted but who was missing when the post escaped. The team agreed to include this as a distinctive feature.
+
+- We agreed the proposal would follow the seven sections of the sample proposal (Motivation, Objectives, Data, Methodology, Prototype Sketches, R Packages, Project Schedule), plus a short Preliminary Data Audit and a Challenge Question Mapping to strengthen the framing.
+
+- Cheng Yuanyuan raised that we should keep the proposal's stated scope ambitious but flag that some features may be trimmed during implementation, given our Shiny learning curve. The team agreed.
+
+### Agenda Item 3: Division of labour and action items
+
+- Li Xinyue noted that she had **already completed the shared data-preparation work** for MC1 — a script that parses the nested JSON and produces the clean tables (master message table, edge lists, per-round profile, environment events, and tokenised monologue) that all three modules will build on. The team agreed to adopt these tables as the common foundation, and that Li Xinyue would maintain them.
+
+- After discussing each person's interests and strengths, we agreed on the division of labour below. Because Li Xinyue had done the data preparation and had already built an agent reply network during the take-home exercise, she took on the data layer and the network module.
+
+  - **Li Xinyue** — Data preparation (already completed) and the Interaction Network module: JSON parser, tidy message tables, edge lists, network visualisation, and centrality table. Also maintains the project website (Quarto) and GitHub/Git version control.
+  - **Cheng Yuanyuan** — Temporal Anomaly module: baseline/crisis metrics, timeline, channel heatmap, and environment-event overlays.
+  - **Yang Yang** — Internal-State Explorer and documentation: text tokenisation, sentiment/rationalisation scoring, linked evidence table, and the User Guide.
+
+- All members will jointly review the final Shiny integration, project website, poster, and presentation narrative so the analytical story stays coherent across modules.
+
+**Action Items**
+
+- Li Xinyue to share the completed data-preparation script and clean tables with the team, set up the shared GitHub repository, assemble the proposal in Quarto, and publish it to Vercel before the 10 June deadline.
+- Cheng Yuanyuan to sketch the temporal module's inputs/outputs and proofread the proposal.
+- Yang Yang to hand-draw the combined prototype sketch for the Prototype Sketches section and begin scoping the text module.
+- All to sketch the inputs and outputs for their own module, and to confirm the project schedule is realistic against the official milestones.

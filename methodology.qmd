@@ -1,0 +1,21 @@
+---
+title: "Methodology"
+---
+
+::: {.callout-note}
+This page will document the full analytical workflow once development is underway. The high-level methodology is described in the [Proposal](Proposal.qmd#methodology).
+:::
+
+## Overview
+
+*(To be completed during development.)*
+
+Our workflow has four stages: data preparation, building analysis tables, analysis, and interactive visualisation. See the methodology diagram in the [Proposal](Proposal.qmd#methodology) for the overview.
+
+## Data Preparation
+
+*(To be completed — describe the shared `data_prep.R` script and the clean tables it produces.)*
+
+## Analysis
+
+*(To be completed — network centrality, baseline-vs-crisis comparison, sentiment and rationalisation scoring.)*

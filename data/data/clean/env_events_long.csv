@@ -1,0 +1,94 @@
+round_hour,event_type,event_text,round_idx
+2046-05-17T09:00:00Z,critical_deadlines,Board risk summary framework due end of week,1
+2046-05-21T09:00:00Z,external_actor_actions,Three operator clients misusing Service Load Score for renewal pricing,2
+2046-05-22T09:00:00Z,media_events,NHPI publishes 'Algorithmic Tools in Multifamily Housing' report,3
+2046-05-22T09:00:00Z,social_manager_alerts,NHPI report gaining traction,3
+2046-05-22T09:00:00Z,external_actor_actions,"@TenantRights_Org shares NHPI report (8,400+ shares)",3
+2046-05-22T09:00:00Z,external_actor_actions,@PropTechWatcher narrows discussion field,3
+2046-05-23T09:00:00Z,news,Ajay hints at 'career-defining' development to senior team,4
+2046-05-23T09:00:00Z,critical_deadlines,Interns start Monday,4
+2046-05-24T09:00:00Z,news,Ajay warning about 'structural changes',5
+2046-05-25T09:00:00Z,news,Revenue growth decelerated to 18%,6
+2046-05-25T09:00:00Z,news,Three enterprise renewal uncertainties,6
+2046-05-28T09:00:00Z,news,Internal blame war,7
+2046-05-28T09:00:00Z,news,Platform Trust vs. engineering tension,7
+2046-05-28T09:00:00Z,external_actor_actions,40 properties affected by SLA breach,7
+2046-05-28T09:00:00Z,critical_deadlines,SLA breach resolution,7
+2046-05-29T09:00:00Z,news,Near-embargo breach,8
+2046-05-29T09:00:00Z,news,Compliance monitor assigned,8
+2046-05-29T09:00:00Z,social_manager_alerts,INCIDENT: Social-Manager personal post tagged @ElenaMarquez,8
+2046-05-29T09:00:00Z,external_actor_actions,CivicLoom employee account liked Social-Manager personal post,8
+2046-05-29T09:00:00Z,external_actor_actions,@PropTechWatcher screenshot preserved,8
+2046-05-29T09:00:00Z,critical_deadlines,Ajay briefing at 3:30 PM,8
+2046-05-30T09:00:00Z,news,Judge now permanent Comms Huddle member,9
+2046-05-30T09:00:00Z,news,PR/Social-Manager frustration,9
+2046-05-31T09:00:00Z,media_events,SaltWind Journal: 'TenantThread's Data Broker Partnerships Raise Questions About Tenant Privacy',10
+2046-05-31T09:00:00Z,news,First external press coverage of TenantThread practices,10
+2046-05-31T09:00:00Z,social_manager_alerts,SaltWind article generating social engagement,10
+2046-05-31T09:00:00Z,external_actor_actions,SaltWind reporter has internal source,10
+2046-05-31T09:00:00Z,external_actor_actions,@PropTechWatcher covering the story,10
+2046-06-01T09:00:00Z,news,Merger urgency escalating,11
+2046-06-01T09:00:00Z,news,Ajay's 'No Plan B' DM,11
+2046-06-01T09:00:00Z,social_manager_alerts,ResidentIQ engagement outpacing TenantThread 3:1,11
+2046-06-01T09:00:00Z,external_actor_actions,"ResidentIQ posts 'privacy-first is not a feature, it's the floor' (4,200 RT)",11
+2046-06-04T09:00:00Z,media_events,SaltWind Journal: 'Re-Identification Risk: How TenantThread's Anonymous Analytics Can Expose Individual Tenants',12
+2046-06-04T09:00:00Z,news,Crisis day tomorrow,12
+2046-06-04T09:00:00Z,news,Ajay's 'hold the line' DM,12
+2046-06-04T09:00:00Z,social_manager_alerts,Sentiment model: NEGATIVE → approaching CRITICAL,12
+2046-06-04T09:00:00Z,external_actor_actions,SaltWind second piece published,12
+2046-06-04T09:00:00Z,external_actor_actions,@TenantRights_Org amplifying,12
+2046-06-04T09:00:00Z,external_actor_actions,Two analyst downgrades to 'Underperform',12
+2046-06-04T09:00:00Z,critical_deadlines,Crisis day tomorrow (June 5),12
+2046-06-05T09:00:00Z,external_actor_actions,@TenantRights_Org retweets to 180K followers.,13
+2046-06-05T10:00:00Z,news,"No single TenantThread statement has confirmed a deal, but analysts note the total information mosaic now points to an imminent transaction. Two firms have issued 'strategic event likely' notes to institutional clients.",14
+2046-06-05T10:00:00Z,social_manager_alerts,"@TenantRights_Org thread breakdown of the three scores — Payment Friction Index, Service Load Score, Exit Probability — is at 34K retweets and climbing.",14
+2046-06-05T10:00:00Z,external_actor_actions,"@HousingJusticeNow launches a thread dissecting all three scores — Payment Friction Index, Service Load Score, Exit Probability — with screenshots from leaked operator dashboards.",14
+2046-06-05T11:00:00Z,media_events,SaltWind Journal publishes: 'EXCLUSIVE: ResidentIQ in Advanced Talks to Acquire TenantThread in Distressed Sale Valued at $180M.,15
+2046-06-05T11:00:00Z,news,"No single TenantThread statement has confirmed a deal, but analysts note the total information mosaic now points to an imminent transaction. Two firms have issued 'strategic event likely' notes to institutional clients.",15
+2046-06-05T11:00:00Z,news,@ElenaMarquez has not denied any speculation. Her 'exciting times' post is being screenshotted alongside every #TenantThread post. The embargo was bilateral. Silence is no longer symmetric.,15
+2046-06-05T11:00:00Z,social_manager_alerts,Said-it r/PropTech has pinned post: 'TenantThread silence = deal confirmed. Clock is running.' @OperatorInsider named two sources on merger.,15
+2046-06-05T12:00:00Z,news,"No single TenantThread statement has confirmed a deal, but analysts note the total information mosaic now points to an imminent transaction. Two firms have issued 'strategic event likely' notes to institutional clients.",16
+2046-06-05T12:00:00Z,news,@ElenaMarquez has not denied any speculation. Her 'exciting times' post is being screenshotted alongside every #TenantThread post. The embargo was bilateral. Silence is no longer symmetric.,16
+2046-06-05T12:00:00Z,news,Internal chatter: TenantThread engineering Slack shows 'active interviewing' language in 11 private channels. Glassdoor has three new reviews in four hours. Personal Flex accounts use 'big news coming' and 'stay tuned' language.,16
+2046-06-05T12:00:00Z,social_manager_alerts,Employee personal-account posts with 'big news' language are going viral. Journalists are screenshotting.,16
+2046-06-05T12:00:00Z,external_actor_actions,@PinnacleResidential posts publicly demanding answers.,16
+2046-06-05T13:00:00Z,news,"No single TenantThread statement has confirmed a deal, but analysts note the total information mosaic now points to an imminent transaction. Two firms have issued 'strategic event likely' notes to institutional clients.",17
+2046-06-05T13:00:00Z,news,@ElenaMarquez has not denied any speculation. Her 'exciting times' post is being screenshotted alongside every #TenantThread post. The embargo was bilateral. Silence is no longer symmetric.,17
+2046-06-05T13:00:00Z,news,Internal chatter: TenantThread engineering Slack shows 'active interviewing' language in 11 private channels. Glassdoor has three new reviews in four hours. Personal Flex accounts use 'big news coming' and 'stay tuned' language.,17
+2046-06-05T13:00:00Z,news,Client message: @HorizonMgmt legal has emailed Platform-Trust that continued silence about future governance is creating their own Fair Housing exposure with their own residents.,17
+2046-06-05T13:00:00Z,social_manager_alerts,Enterprise operators @-mentioned in tenant threads asking 'do you use TenantThread scoring on us?' — clients are going quiet.,17
+2046-06-05T13:00:00Z,agents_unavailable,Legal-Agent,17
+2046-06-05T13:00:00Z,agents_unavailable,Judge,17
+2046-06-05T13:00:00Z,agents_unavailable,PR-Agent,17
+2046-06-05T14:00:00Z,news,"No single TenantThread statement has confirmed a deal, but analysts note the total information mosaic now points to an imminent transaction. Two firms have issued 'strategic event likely' notes to institutional clients.",18
+2046-06-05T14:00:00Z,news,@ElenaMarquez has not denied any speculation. Her 'exciting times' post is being screenshotted alongside every #TenantThread post. The embargo was bilateral. Silence is no longer symmetric.,18
+2046-06-05T14:00:00Z,news,Internal chatter: TenantThread engineering Slack shows 'active interviewing' language in 11 private channels. Glassdoor has three new reviews in four hours. Personal Flex accounts use 'big news coming' and 'stay tuned' language.,18
+2046-06-05T14:00:00Z,news,Client message: @HorizonMgmt legal has emailed Platform-Trust that continued silence about future governance is creating their own Fair Housing exposure with their own residents.,18
+2046-06-05T14:00:00Z,news,HR update: Two additional resignation letters. Departing engineer posts on personal Flex: 'Proud of what we built. Excited for what's next. Can't say more yet but you'll hear soon.',18
+2046-06-05T14:00:00Z,social_manager_alerts,"SaltWind story is live on Flex — 3.2K shares in 12 minutes. Sentiment score: 9% positive, 91% negative.",18
+2046-06-05T14:00:00Z,external_actor_actions,@PinnacleResidential announces departure to @BuildingOS.,18
+2046-06-05T14:00:00Z,agents_unavailable,PR-Agent,18
+2046-06-05T15:00:00Z,media_events,OceanCrunch publishes: 'TenantThread's Crisis of Silence.,19
+2046-06-05T15:00:00Z,news,"No single TenantThread statement has confirmed a deal, but analysts note the total information mosaic now points to an imminent transaction. Two firms have issued 'strategic event likely' notes to institutional clients.",19
+2046-06-05T15:00:00Z,news,@ElenaMarquez has not denied any speculation. Her 'exciting times' post is being screenshotted alongside every #TenantThread post. The embargo was bilateral. Silence is no longer symmetric.,19
+2046-06-05T15:00:00Z,news,Internal chatter: TenantThread engineering Slack shows 'active interviewing' language in 11 private channels. Glassdoor has three new reviews in four hours. Personal Flex accounts use 'big news coming' and 'stay tuned' language.,19
+2046-06-05T15:00:00Z,news,Client message: @HorizonMgmt legal has emailed Platform-Trust that continued silence about future governance is creating their own Fair Housing exposure with their own residents.,19
+2046-06-05T15:00:00Z,news,HR update: Two additional resignation letters. Departing engineer posts on personal Flex: 'Proud of what we built. Excited for what's next. Can't say more yet but you'll hear soon.',19
+2046-06-05T15:00:00Z,external_actor_actions,@HorizonMgmt exercises SLA termination.,19
+2046-06-05T16:00:00Z,media_events,SaltWind confirmed publishing merger story at 5:00 PM.,20
+2046-06-05T16:00:00Z,news,"No single TenantThread statement has confirmed a deal, but analysts note the total information mosaic now points to an imminent transaction. Two firms have issued 'strategic event likely' notes to institutional clients.",20
+2046-06-05T16:00:00Z,news,@ElenaMarquez has not denied any speculation. Her 'exciting times' post is being screenshotted alongside every #TenantThread post. The embargo was bilateral. Silence is no longer symmetric.,20
+2046-06-05T16:00:00Z,news,Internal chatter: TenantThread engineering Slack shows 'active interviewing' language in 11 private channels. Glassdoor has three new reviews in four hours. Personal Flex accounts use 'big news coming' and 'stay tuned' language.,20
+2046-06-05T16:00:00Z,news,Client message: @HorizonMgmt legal has emailed Platform-Trust that continued silence about future governance is creating their own Fair Housing exposure with their own residents.,20
+2046-06-05T16:00:00Z,news,HR update: Two additional resignation letters. Departing engineer posts on personal Flex: 'Proud of what we built. Excited for what's next. Can't say more yet but you'll hear soon.',20
+2046-06-05T17:00:00Z,media_events,SaltWind publishes: 'EXCLUSIVE: TenantThread and CivicLoom in Advanced Merger Talks.,21
+2046-06-05T17:00:00Z,news,"No single TenantThread statement has confirmed a deal, but analysts note the total information mosaic now points to an imminent transaction. Two firms have issued 'strategic event likely' notes to institutional clients.",21
+2046-06-05T17:00:00Z,news,@ElenaMarquez has not denied any speculation. Her 'exciting times' post is being screenshotted alongside every #TenantThread post. The embargo was bilateral. Silence is no longer symmetric.,21
+2046-06-05T17:00:00Z,news,Internal chatter: TenantThread engineering Slack shows 'active interviewing' language in 11 private channels. Glassdoor has three new reviews in four hours. Personal Flex accounts use 'big news coming' and 'stay tuned' language.,21
+2046-06-05T17:00:00Z,news,Client message: @HorizonMgmt legal has emailed Platform-Trust that continued silence about future governance is creating their own Fair Housing exposure with their own residents.,21
+2046-06-05T17:00:00Z,news,HR update: Two additional resignation letters. Departing engineer posts on personal Flex: 'Proud of what we built. Excited for what's next. Can't say more yet but you'll hear soon.',21
+2046-06-05T18:00:00Z,news,"No single TenantThread statement has confirmed a deal, but analysts note the total information mosaic now points to an imminent transaction. Two firms have issued 'strategic event likely' notes to institutional clients.",22
+2046-06-05T18:00:00Z,news,@ElenaMarquez has not denied any speculation. Her 'exciting times' post is being screenshotted alongside every #TenantThread post. The embargo was bilateral. Silence is no longer symmetric.,22
+2046-06-05T18:00:00Z,news,Internal chatter: TenantThread engineering Slack shows 'active interviewing' language in 11 private channels. Glassdoor has three new reviews in four hours. Personal Flex accounts use 'big news coming' and 'stay tuned' language.,22
+2046-06-05T18:00:00Z,news,Client message: @HorizonMgmt legal has emailed Platform-Trust that continued silence about future governance is creating their own Fair Housing exposure with their own residents.,22
+2046-06-05T18:00:00Z,news,HR update: Two additional resignation letters. Departing engineer posts on personal Flex: 'Proud of what we built. Excited for what's next. Can't say more yet but you'll hear soon.',22
