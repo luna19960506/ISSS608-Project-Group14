@@ -195,6 +195,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#agenda-item-2-decide-app-structure-and-proposal-content" id="toc-agenda-item-2-decide-app-structure-and-proposal-content" class="nav-link" data-scroll-target="#agenda-item-2-decide-app-structure-and-proposal-content">Agenda Item 2: Decide app structure and proposal content</a></li>
   <li><a href="#agenda-item-3-division-of-labour-and-action-items" id="toc-agenda-item-3-division-of-labour-and-action-items" class="nav-link" data-scroll-target="#agenda-item-3-division-of-labour-and-action-items">Agenda Item 3: Division of labour and action items</a></li>
   </ul></li>
+  <li><a href="#project-meeting-2" id="toc-project-meeting-2" class="nav-link" data-scroll-target="#project-meeting-2">Project Meeting 2</a>
+  <ul class="collapse">
+  <li><a href="#agenda-items-1" id="toc-agenda-items-1" class="nav-link" data-scroll-target="#agenda-items-1">Agenda Items</a></li>
+  <li><a href="#agenda-item-1-confirm-detailed-work-allocation" id="toc-agenda-item-1-confirm-detailed-work-allocation" class="nav-link" data-scroll-target="#agenda-item-1-confirm-detailed-work-allocation">Agenda Item 1: Confirm detailed work allocation</a></li>
+  <li><a href="#agenda-item-2-agree-the-shared-sidebar-interface-contract" id="toc-agenda-item-2-agree-the-shared-sidebar-interface-contract" class="nav-link" data-scroll-target="#agenda-item-2-agree-the-shared-sidebar-interface-contract">Agenda Item 2: Agree the shared-sidebar interface contract</a></li>
+  <li><a href="#agenda-item-3-set-the-scaffolding-deadline" id="toc-agenda-item-3-set-the-scaffolding-deadline" class="nav-link" data-scroll-target="#agenda-item-3-set-the-scaffolding-deadline">Agenda Item 3: Set the scaffolding deadline</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -280,6 +287,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Cheng Yuanyuan to sketch the temporal module’s inputs/outputs and proofread the proposal.</li>
 <li>Yang Yang to hand-draw the combined prototype sketch for the Prototype Sketches section and begin scoping the text module.</li>
 <li>All to sketch the inputs and outputs for their own module, and to confirm the project schedule is realistic against the official milestones.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="project-meeting-2" class="level2">
+<h2 class="anchored" data-anchor-id="project-meeting-2">Project Meeting 2</h2>
+<p><strong>Date:</strong> 20/06/2026</p>
+<p><strong>Time:</strong> 3:30 - 4:00 PM</p>
+<p><strong>In Attendance:</strong> Yang Yang, Cheng Yuanyuan, Li Xinyue</p>
+<section id="agenda-items-1" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-items-1">Agenda Items</h3>
+<ol type="1">
+<li>Confirm detailed work allocation</li>
+<li>Agree the shared-sidebar interface contract</li>
+<li>Set the scaffolding deadline</li>
+</ol>
+</section>
+<section id="agenda-item-1-confirm-detailed-work-allocation" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-item-1-confirm-detailed-work-allocation">Agenda Item 1: Confirm detailed work allocation</h3>
+<ul>
+<li>We reconfirmed the module ownership agreed earlier and broke each module into concrete first tasks:
+<ul>
+<li><strong>Li Xinyue</strong> — maintain the shared data-preparation layer (already completed) and build the Interaction Network module (network graph, node-click detail panel, centrality table).</li>
+<li><strong>Cheng Yuanyuan</strong> — build the Temporal Anomaly module (timeline, baseline-vs-crisis comparison, channel heatmap, environment-event overlay).</li>
+<li><strong>Yang Yang</strong> — build the Internal-State Explorer module (sentiment-over-time, rationalisation word-frequency, linked evidence table) and the user guide.</li>
+</ul></li>
+<li>We agreed each member is responsible for their own module’s UI tab and server logic, so that each sub-module is clearly one person’s work, while the app integrates into a single coherent system.</li>
+</ul>
+</section>
+<section id="agenda-item-2-agree-the-shared-sidebar-interface-contract" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-item-2-agree-the-shared-sidebar-interface-contract">Agenda Item 2: Agree the shared-sidebar interface contract</h3>
+<ul>
+<li><p>Because all three modules read from the same sidebar, we agreed an <strong>interface contract</strong> for the shared filters so the modules can be developed independently and integrated without conflict. The sidebar will expose a single reactive list of filter values, and every module must read only from this list:</p>
+<ul>
+<li><code>time_range</code> — vector of two <code>Date</code>/<code>POSIXct</code> values (start, end) over 17 May – 5 June 2046.</li>
+<li><code>agents</code> — character vector of selected <code>agent_label</code> values (empty = all).</li>
+<li><code>channels</code> — character vector of selected channel names (empty = all).</li>
+<li><code>public_only</code> — logical; if <code>TRUE</code>, restrict to public-facing channels.</li>
+<li><code>show_availability</code> — logical; whether to overlay agent-availability markers.</li>
+</ul></li>
+<li><p>Rules we agreed on:</p>
+<ol type="1">
+<li>The sidebar is the <strong>single source of truth</strong>; no module defines its own copy of these filters.</li>
+<li>Field <strong>names and types are frozen</strong> — any change must be raised with the team before editing.</li>
+<li>Each module must handle the “empty selection = show all” case gracefully.</li>
+<li>All modules read the same clean tables from the shared data-preparation layer; no module re-parses the raw JSON.</li>
+</ol></li>
+</ul>
+</section>
+<section id="agenda-item-3-set-the-scaffolding-deadline" class="level3">
+<h3 class="anchored" data-anchor-id="agenda-item-3-set-the-scaffolding-deadline">Agenda Item 3: Set the scaffolding deadline</h3>
+<ul>
+<li>We agreed to complete the <strong>app scaffolding</strong> — the Shiny project skeleton, the shared sidebar implementing the contract above, and a placeholder tab for each of the three modules — <strong>before this Saturday (27/06/2026)</strong>, so that the following week can focus on filling in each module’s analysis and visualisations.</li>
+</ul>
+<p><strong>Action Items</strong></p>
+<ul>
+<li>Li Xinyue to set up the Shiny project skeleton and the shared sidebar implementing the agreed interface contract, and share the clean data tables.</li>
+<li>Cheng Yuanyuan and Yang Yang to each create a placeholder tab wired to the shared filters, ready to fill in their module.</li>
+<li>All to have the scaffolding working and pushed before 27/06/2026.</li>
 </ul>
 
 
@@ -807,7 +873,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Li Xinyue to share the completed data-preparation script and clean tables with the team, set up the shared GitHub repository, assemble the proposal in Quarto, and publish it to Vercel before the 10 June deadline.</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cheng Yuanyuan to sketch the temporal module's inputs/outputs and proofread the proposal.</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Yang Yang to hand-draw the combined prototype sketch for the Prototype Sketches section and begin scoping the text module.</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>All to sketch the inputs and outputs for their own module, and to confirm the project schedule is realistic against the official milestones.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>All to sketch the inputs and outputs for their own module, and to confirm the project schedule is realistic against the official milestones.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Project Meeting 2</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>**Date:** 20/06/2026</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>**Time:** 3:30 - 4:00 PM</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>**In Attendance:** Yang Yang, Cheng Yuanyuan, Li Xinyue</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Agenda Items</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Confirm detailed work allocation</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Agree the shared-sidebar interface contract</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Set the scaffolding deadline</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="fu">### Agenda Item 1: Confirm detailed work allocation</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>We reconfirmed the module ownership agreed earlier and broke each module into concrete first tasks:</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Li Xinyue** — maintain the shared data-preparation layer (already completed) and build the Interaction Network module (network graph, node-click detail panel, centrality table).</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Cheng Yuanyuan** — build the Temporal Anomaly module (timeline, baseline-vs-crisis comparison, channel heatmap, environment-event overlay).</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Yang Yang** — build the Internal-State Explorer module (sentiment-over-time, rationalisation word-frequency, linked evidence table) and the user guide.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>We agreed each member is responsible for their own module's UI tab and server logic, so that each sub-module is clearly one person's work, while the app integrates into a single coherent system.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### Agenda Item 2: Agree the shared-sidebar interface contract</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Because all three modules read from the same sidebar, we agreed an **interface contract** for the shared filters so the modules can be developed independently and integrated without conflict. The sidebar will expose a single reactive list of filter values, and every module must read only from this list:</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`time_range`</span> — vector of two <span class="in">`Date`</span>/<span class="in">`POSIXct`</span> values (start, end) over 17 May – 5 June 2046.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`agents`</span> — character vector of selected <span class="in">`agent_label`</span> values (empty = all).</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`channels`</span> — character vector of selected channel names (empty = all).</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`public_only`</span> — logical; if <span class="in">`TRUE`</span>, restrict to public-facing channels.</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`show_availability`</span> — logical; whether to overlay agent-availability markers.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rules we agreed on:</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="ss">  1. </span>The sidebar is the **single source of truth**; no module defines its own copy of these filters.</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="ss">  2. </span>Field **names and types are frozen** — any change must be raised with the team before editing.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="ss">  3. </span>Each module must handle the "empty selection = show all" case gracefully.</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="ss">  4. </span>All modules read the same clean tables from the shared data-preparation layer; no module re-parses the raw JSON.</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="fu">### Agenda Item 3: Set the scaffolding deadline</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>We agreed to complete the **app scaffolding** — the Shiny project skeleton, the shared sidebar implementing the contract above, and a placeholder tab for each of the three modules — **before this Saturday (27/06/2026)**, so that the following week can focus on filling in each module's analysis and visualisations.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>**Action Items**</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Li Xinyue to set up the Shiny project skeleton and the shared sidebar implementing the agreed interface contract, and share the clean data tables.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cheng Yuanyuan and Yang Yang to each create a placeholder tab wired to the shared filters, ready to fill in their module.</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>All to have the scaffolding working and pushed before 27/06/2026.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

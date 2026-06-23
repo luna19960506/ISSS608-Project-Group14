@@ -65,3 +65,54 @@ title: "Meeting Minutes"
 - Cheng Yuanyuan to sketch the temporal module's inputs/outputs and proofread the proposal.
 - Yang Yang to hand-draw the combined prototype sketch for the Prototype Sketches section and begin scoping the text module.
 - All to sketch the inputs and outputs for their own module, and to confirm the project schedule is realistic against the official milestones.
+
+---
+
+## Project Meeting 2
+
+**Date:** 20/06/2026
+
+**Time:** 3:30 - 4:00 PM
+
+**In Attendance:** Yang Yang, Cheng Yuanyuan, Li Xinyue
+
+### Agenda Items
+
+1. Confirm detailed work allocation
+2. Agree the shared-sidebar interface contract
+3. Set the scaffolding deadline
+
+### Agenda Item 1: Confirm detailed work allocation
+
+- We reconfirmed the module ownership agreed earlier and broke each module into concrete first tasks:
+  - **Li Xinyue** — maintain the shared data-preparation layer (already completed) and build the Interaction Network module (network graph, node-click detail panel, centrality table).
+  - **Cheng Yuanyuan** — build the Temporal Anomaly module (timeline, baseline-vs-crisis comparison, channel heatmap, environment-event overlay).
+  - **Yang Yang** — build the Internal-State Explorer module (sentiment-over-time, rationalisation word-frequency, linked evidence table) and the user guide.
+
+- We agreed each member is responsible for their own module's UI tab and server logic, so that each sub-module is clearly one person's work, while the app integrates into a single coherent system.
+
+### Agenda Item 2: Agree the shared-sidebar interface contract
+
+- Because all three modules read from the same sidebar, we agreed an **interface contract** for the shared filters so the modules can be developed independently and integrated without conflict. The sidebar will expose a single reactive list of filter values, and every module must read only from this list:
+
+  - `time_range` — vector of two `Date`/`POSIXct` values (start, end) over 17 May – 5 June 2046.
+  - `agents` — character vector of selected `agent_label` values (empty = all).
+  - `channels` — character vector of selected channel names (empty = all).
+  - `public_only` — logical; if `TRUE`, restrict to public-facing channels.
+  - `show_availability` — logical; whether to overlay agent-availability markers.
+
+- Rules we agreed on:
+  1. The sidebar is the **single source of truth**; no module defines its own copy of these filters.
+  2. Field **names and types are frozen** — any change must be raised with the team before editing.
+  3. Each module must handle the "empty selection = show all" case gracefully.
+  4. All modules read the same clean tables from the shared data-preparation layer; no module re-parses the raw JSON.
+
+### Agenda Item 3: Set the scaffolding deadline
+
+- We agreed to complete the **app scaffolding** — the Shiny project skeleton, the shared sidebar implementing the contract above, and a placeholder tab for each of the three modules — **before this Saturday (27/06/2026)**, so that the following week can focus on filling in each module's analysis and visualisations.
+
+**Action Items**
+
+- Li Xinyue to set up the Shiny project skeleton and the shared sidebar implementing the agreed interface contract, and share the clean data tables.
+- Cheng Yuanyuan and Yang Yang to each create a placeholder tab wired to the shared filters, ready to fill in their module.
+- All to have the scaffolding working and pushed before 27/06/2026.
