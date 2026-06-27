@@ -31,10 +31,10 @@ website:
       - text: "The Team"
         href: team.qmd
       - text: "Shiny App"
-        href: "https://your-app-name.shinyapps.io/your-app/"
+        href: "https://lunali.shinyapps.io/glass-office/"
         target: _blank
       - icon: github
-        href: "https://github.com/your-team/your-repo"
+        href: "https://github.com/luna19960506/ISSS608-Project-Group14"
         target: _blank
         aria-label: GitHub
 
