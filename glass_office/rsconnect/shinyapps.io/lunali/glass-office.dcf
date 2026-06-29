@@ -5,6 +5,6 @@ account: lunali
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 17557835
-bundleId: 12186872
+bundleId: 12195597
 url: https://lunali.shinyapps.io/glass-office/
 version: 1
