@@ -116,3 +116,41 @@ title: "Meeting Minutes"
 - Li Xinyue to set up the Shiny project skeleton and the shared sidebar implementing the agreed interface contract, and share the clean data tables.
 - Cheng Yuanyuan and Yang Yang to each create a placeholder tab wired to the shared filters, ready to fill in their module.
 - All to have the scaffolding working and pushed before 27/06/2026.
+
+---
+
+## Project Meeting 3
+
+**Date:** 27/06/2026
+
+**Time:** 4:00 - 4:30 PM
+
+**In Attendance:** Yang Yang, Cheng Yuanyuan, Li Xinyue
+
+### Agenda Items
+
+1. Review module progress
+2. Assign integration and poster work
+3. Confirm delivery date
+
+### Agenda Item 1: Review module progress
+
+- Each member reported that the code for their module is **complete**: the Interaction Network, Temporal Anomaly, and Internal-State Explorer modules are all working against the shared data tables and read correctly from the shared sidebar following the interface contract agreed in Meeting 2.
+
+- We confirmed that, because every module followed the agreed filter contract, the three modules can be combined without rework.
+
+### Agenda Item 2: Assign integration and poster work
+
+- **Li Xinyue** to take responsibility for **assembling the code and producing the Shiny app** — integrating the three modules into a single application, wiring them to the shared sidebar, testing the combined app, and deploying it to shinyapps.io.
+
+- **Yang Yang and Cheng Yuanyuan** to take responsibility for **completing the project poster** (A1 format) — issues and motivation, approach, results with screenshots from the working app, and future work.
+
+### Agenda Item 3: Confirm delivery date
+
+- We agreed the **delivery date is 30 June 2026**: the assembled Shiny app and the completed poster are both to be finished and submitted by then.
+
+**Action Items**
+
+- Li Xinyue to integrate the three modules, test the combined app, and deploy it to shinyapps.io by 30/06/2026.
+- Yang Yang and Cheng Yuanyuan to complete the A1 poster, using screenshots from the integrated app, by 30/06/2026.
+- All to review the final app and poster together before submission.
